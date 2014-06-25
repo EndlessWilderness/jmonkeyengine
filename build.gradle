@@ -58,7 +58,7 @@ task libDist(dependsOn: subprojects.build) << {
 }
 
 task createZipDistribution(type:Zip,dependsOn:["dist","libDist"], description:"Package the nightly zip distribution"){    
-        archiveName "jME"+jmeVersion+"_"+jmeVersionTag+"_"+new Date().format("yyyy-MM-dd")+".zip"
+        archiveName "jME-"+jmeVersion+"-"+jmeVersionTag+"_"+new Date().format("yyyy-MM-dd")+".zip"
        
         into("/") {
              from {"./dist"}
@@ -66,7 +66,6 @@ task createZipDistribution(type:Zip,dependsOn:["dist","libDist"], description:"P
         into("/sources") {
             from {"$buildDir/libDist/sources"}     
         }   
-        println archiveName       
 }
 
 task copyLibs(type: Copy){

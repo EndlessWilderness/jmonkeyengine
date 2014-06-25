@@ -32,7 +32,7 @@
 package com.jme3.system;
 
 public class JmeVersion {
-    private static final String FULL_NAME = "jMonkeyEngine 3.1.0 (snapshot-github)";
+    private static final String FULL_NAME = "jMonkeyEngine 3.1.0 (SNAPSHOT)";
     
     public static String getFullName() {
         return FULL_NAME;
