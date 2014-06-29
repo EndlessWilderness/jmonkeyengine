@@ -2,8 +2,9 @@
 // This file is to be applied to every subproject.
 //
 
+apply plugin: 'artifactory-publish'
+apply plugin: 'maven-publish'
 apply plugin: 'java'
-apply plugin: 'maven'
 
 String mavenGroupId = 'com.jdydev.jme3'
 String mavenVersion = jmeVersion + '-' + jmeVersionTag //'-SNAPSHOT'
@@ -63,14 +64,6 @@ artifacts {
 //    archives javadocJar
 }
 
-configure(install.repositories.mavenInstaller) {
-    pom.project {
-        groupId = mavenGroupId
-        artifactId = mavenArtifactId
-        version = mavenVersion
-    }
-}
-
 task createFolders(description: 'Creates the source folders if they do not exist.') doLast {
 //    sourceSets*.allSource*.srcDirs*.each { File srcDir ->
 //        if (!srcDir.isDirectory()) {
@@ -78,4 +71,16 @@ task createFolders(description: 'Creates the source folders if they do not exist
 //            srcDir.mkdirs()
 //        }
 //    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+artifactoryPublish {
+    publications(publishing.publications.mavenJava)
 }

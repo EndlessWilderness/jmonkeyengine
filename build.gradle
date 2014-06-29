@@ -1,5 +1,17 @@
 import org.gradle.api.artifacts.*
 
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:2.2.5"
+  }
+}
+
+apply plugin: 'artifactory-publish'
+apply plugin: 'maven-publish'
 apply plugin: 'base' // To add "clean" task to the root project.
 //apply plugin: 'java-library-distribution'
 
@@ -9,6 +21,20 @@ subprojects {
     //    if(!project.name.endsWith('native')){
     apply from: rootProject.file('common.gradle')
     //    }
+}
+
+artifactory {
+    contextUrl = 'http://oss.jfrog.org'
+    publish {
+        repository {
+            repoKey = 'oss-snapshot-local'
+            username = 'jeremydyoung'
+            password = System.env.APIKEY
+        }
+        defaults {
+            publishArtifacts = true
+        }
+    }
 }
 
 task run(dependsOn: ':jme3-examples:build', type: JavaExec) {
