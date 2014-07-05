@@ -124,20 +124,20 @@ public final class NativeLibraryLoader {
     
     static {
         // LWJGL
-        registerNativeLibrary("lwjgl", Platform.Windows32, "native/windows/lwjgl.dll");
-        registerNativeLibrary("lwjgl", Platform.Windows64, "native/windows/lwjgl64.dll");
-        registerNativeLibrary("lwjgl", Platform.Linux32,   "native/linux/liblwjgl.so");
-        registerNativeLibrary("lwjgl", Platform.Linux64,   "native/linux/liblwjgl64.so");
-        registerNativeLibrary("lwjgl", Platform.MacOSX32,  "native/macosx/liblwjgl.jnilib");
-        registerNativeLibrary("lwjgl", Platform.MacOSX64,  "native/macosx/liblwjgl.jnilib");
+        registerNativeLibrary("lwjgl", Platform.Windows32, "lwjgl.dll");
+        registerNativeLibrary("lwjgl", Platform.Windows64, "lwjgl64.dll");
+        registerNativeLibrary("lwjgl", Platform.Linux32,   "liblwjgl.so");
+        registerNativeLibrary("lwjgl", Platform.Linux64,   "liblwjgl64.so");
+        registerNativeLibrary("lwjgl", Platform.MacOSX32,  "liblwjgl.jnilib");
+        registerNativeLibrary("lwjgl", Platform.MacOSX64,  "liblwjgl.jnilib");
         
         // OpenAL
-        registerNativeLibrary("openal", Platform.Windows32, "native/windows/OpenAL32.dll", false);
-        registerNativeLibrary("openal", Platform.Windows64, "native/windows/OpenAL64.dll", false);
-        registerNativeLibrary("openal", Platform.Linux32,   "native/linux/libopenal.so", false);
-        registerNativeLibrary("openal", Platform.Linux64,   "native/linux/libopenal64.so", false);
-        registerNativeLibrary("openal", Platform.MacOSX32,  "native/macosx/openal.dylib", false);
-        registerNativeLibrary("openal", Platform.MacOSX64,  "native/macosx/openal.dylib", false);
+        registerNativeLibrary("openal", Platform.Windows32, "OpenAL32.dll", false);
+        registerNativeLibrary("openal", Platform.Windows64, "OpenAL64.dll", false);
+        registerNativeLibrary("openal", Platform.Linux32,   "libopenal.so", false);
+        registerNativeLibrary("openal", Platform.Linux64,   "libopenal64.so", false);
+        registerNativeLibrary("openal", Platform.MacOSX32,  "openal.dylib", false);
+        registerNativeLibrary("openal", Platform.MacOSX64,  "openal.dylib", false);
         
         // BulletJme
         registerNativeLibrary("bulletjme", Platform.Windows32, "native/windows/x86/bulletjme.dll");
@@ -148,16 +148,16 @@ public final class NativeLibraryLoader {
         registerNativeLibrary("bulletjme", Platform.MacOSX64,  "native/macosx/x86_64/libbulletjme.jnilib");
         
         // JInput
-        registerNativeLibrary("jinput", Platform.Windows32, "native/windows/jinput-raw.dll");
-        registerNativeLibrary("jinput", Platform.Windows64, "native/windows/jinput-raw_64.dll");
-        registerNativeLibrary("jinput", Platform.Linux32,   "native/windows/libjinput-linux.so");
-        registerNativeLibrary("jinput", Platform.Linux64,   "native/windows/libjinput-linux64.so");
-        registerNativeLibrary("jinput", Platform.MacOSX32,  "native/macosx/libjinput-osx.jnilib");
-        registerNativeLibrary("jinput", Platform.MacOSX64,  "native/macosx/libjinput-osx.jnilib");
+        registerNativeLibrary("jinput", Platform.Windows32, "jinput-raw.dll");
+        registerNativeLibrary("jinput", Platform.Windows64, "jinput-raw_64.dll");
+        registerNativeLibrary("jinput", Platform.Linux32,   "libjinput-linux.so");
+        registerNativeLibrary("jinput", Platform.Linux64,   "libjinput-linux64.so");
+        registerNativeLibrary("jinput", Platform.MacOSX32,  "libjinput-osx.jnilib");
+        registerNativeLibrary("jinput", Platform.MacOSX64,  "libjinput-osx.jnilib");
         
         // JInput Auxiliary (only required on Windows)
-        registerNativeLibrary("jinput-dx8", Platform.Windows32, "native/windows/jinput-dx8.dll");
-        registerNativeLibrary("jinput-dx8", Platform.Windows64, "native/windows/jinput-dx8_64.dll");
+        registerNativeLibrary("jinput-dx8", Platform.Windows32, "jinput-dx8.dll");
+        registerNativeLibrary("jinput-dx8", Platform.Windows64, "jinput-dx8_64.dll");
         registerNativeLibrary("jinput-dx8", Platform.Linux32,   null);
         registerNativeLibrary("jinput-dx8", Platform.Linux64,   null);
         registerNativeLibrary("jinput-dx8", Platform.MacOSX32,  null);
