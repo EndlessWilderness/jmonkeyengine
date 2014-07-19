@@ -15,6 +15,10 @@ apply plugin: 'maven-publish'
 apply plugin: 'base' // To add "clean" task to the root project.
 //apply plugin: 'java-library-distribution'
 
+allprojects {
+    apply plugin: 'eclipse'
+}
+
 // This is applied to all sub projects
 subprojects {
     // Don't add to native builds
